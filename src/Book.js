@@ -11,8 +11,7 @@ const Book = ({img, title, author, url}) => {
             <img src={img} alt='' onClick={() => window.open(url)}/>
             <h2 onClick={() => window.open(url)}>{title}</h2>
             <h4 onClick={() => alert(author)}>{author}</h4>
-            <button type="button" onClick={() => compexExample(author)}>more
-                complex example
+            <button type="button" onClick={() => compexExample(author)}>Just Log
             </button>
         </article>
     );
