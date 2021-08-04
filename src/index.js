@@ -1,45 +1,15 @@
 import React from 'react';
 import './index.css';
 import ReactDom from 'react-dom';
+import {data} from './books'
+import Book from './Book'
 
-const books = [
-    {
-        id: 1,
-        img:
-            'https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg',
-        title: 'I Love You to the Moon and Back',
-        author: 'Amelia Hepworth',
-    },
-    {
-        id: 2,
-        img:
-            'https://images-na.ssl-images-amazon.com/images/I/71aLultW5EL._AC_UL200_SR200,200_.jpg',
-        title: 'Our Class is a Family',
-        author: 'Shannon Olsen',
-    },
-    {
-        id: 3,
-        img:
-            'https://images-na.ssl-images-amazon.com/images/I/71e5m7xQd0L._AC_UL200_SR200,200_.jpg',
-        title: 'The Vanishing Half: A Novel',
-        author: 'Brit Bennett',
-    },
-];
-const Book = ({img, title, author}) => {
-    return (
-        <article className='book'>
-            <img src={img} alt=''/>
-            <h2>{title}</h2>
-            <h4>{author}</h4>
-        </article>
-    );
-}
 
 function BookList() {
     return (
         <section className='booklist'>
             {
-                books.map((book) => {
+                data.map((book) => {
                     return <Book key={book.id} {...book}></Book>
                 })
             }
@@ -47,4 +17,4 @@ function BookList() {
     );
 }
 
-ReactDom.render(<BookList />, document.getElementById('root'));
+ReactDom.render(<BookList/>, document.getElementById('root'));
